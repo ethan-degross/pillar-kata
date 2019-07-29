@@ -1,11 +1,11 @@
 export const inventoryList = [{
-    "name":"bread",
-    "price":4.32,
-    "markdown":{
+    "itemName":"bread",
+    "itemPrice":4.32,
+    "itemMarkdown":{
         "decrease":.50,
         "limit":5
     },
-    "special":{
+    "itemSpecial":{
         "type":"buy 2, get 1 free",
         "limit":6
     }
