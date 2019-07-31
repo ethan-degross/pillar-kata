@@ -1,7 +1,7 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import * as F from '../src/index'
-import { inventoryList } from './mock-data'
+import { inventoryList, scannedItems } from './mock-data'
 
 describe('Store Inventory', () => {
     it('exists', () => {
@@ -9,8 +9,8 @@ describe('Store Inventory', () => {
     })
     it('has the correct keys', () => {
         expect(inventoryList[0]).to.be.an('object').includes.keys("itemName", "itemPrice", "itemMarkdown", "itemSpecial")
-        expect(inventoryList[0].itemMarkdown).include.keys("decrease", "limit")
-        expect(inventoryList[0].itemSpecial).include.keys("type", "limit")
+        expect(inventoryList[1].itemMarkdown).include.keys("decrease", "limit")
+        expect(inventoryList[2].itemSpecial).include.keys("type", "limit")
     })
     it('added an item', () => {
         expect(F.addItemToInventory(inventoryList, "chips", 1.99, null, null, null, null)).to.be.an('array')
@@ -38,10 +38,12 @@ describe('Functions that edit the store inventory', () => {
     })
 })
 
-describe('Helper Function to better access arrays', () => {
-    it('pulls the correct index using an id', () => {
-        expect(inventoryList.find(item => item.itemName === "chips").itemMarkdown.decrease).to.equal(1)
-
-        expect(inventoryList.find(item => item.itemName === "whole wheat bread").itemMarkdown.limit).to.equal(5)
+describe('Scanned Items', () => {
+    it('exists', () => {
+        expect(scannedItems).to.exist
+    })
+    it('has the correct keys', () => {
+        expect(scannedItems[0, 1, 2]).to.be.an('object').include.keys("itemName", "quantity", "weight")
     })
 })
+
