@@ -17,3 +17,24 @@ describe('Store Inventory', () => {
         expect(inventoryList[0].itemName).to.include("chips")
     })
 })
+
+describe('Functions that edit the store inventory', () => {
+    it('Item edited', () => {
+        expect(F.editItem(inventoryList, "bread", "itemPrice", 10.99)).to.be.an('array')
+        expect(inventoryList[1].itemPrice).to.equal(10.99)
+
+        F.editItem(inventoryList, "bread", "itemName", "whole wheat bread")
+        expect(inventoryList[1].itemName).to.equal("whole wheat bread")
+
+        F.editItem(inventoryList, "chips", "itemPrice", 2.99)
+        expect(inventoryList[0].itemPrice).to.equal(2.99)
+    })
+    it('Edited the nested keys', () => {
+        F.editItem(inventoryList, "chips", "itemMarkdown.decrease", 1)
+        expect(inventoryList[0].itemMarkdown.decrease).to.equal(1)
+
+        F.editItem(inventoryList, "whole wheat bread", "itemMarkdown.limit", 5)
+        expect(inventoryList[1].itemMarkdown.limit).to.equal(5)
+    })
+})
+
