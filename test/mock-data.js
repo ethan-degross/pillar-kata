@@ -13,7 +13,7 @@ export const inventoryList = [
     },
     {
         "itemName":"soup",
-        "itemPrice":4.32,
+        "itemPrice":1,
         "itemMarkdown":{
             "decrease":.50,
             "limit":5
@@ -33,6 +33,57 @@ export const inventoryList = [
         "itemSpecial":{
             "type":"buy 2, get 1 free",
             "limit":6
+        }
+    }
+]
+
+export const inventoryListA = [
+    {
+        "itemName":"whole wheat bread",
+        "itemPrice":4.32,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"chips",
+        "itemPrice":3.56,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"soup",
+        "itemPrice":1,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"beef",
+        "itemPrice":2,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
         }
     }
 ]
@@ -68,5 +119,48 @@ export const scannedItems = [
         "quantity":1,
         "weight":null
     }
+]
 
+export const scannedItemsA = [
+    {
+        "itemName":"whole wheat bread",
+        "quantity":1,
+        "weight":null
+    },
+    {
+        "itemName":"chips",
+        "quantity":2,
+        "weight":null
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight":null
+    },
+    {
+        "itemName":"beef",
+        "quantity":null,
+        "weight":1.5
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight":null
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight":null
+    },
+    ,
+    {
+        "itemName":"beef",
+        "quantity":null,
+        "weight":3.5
+    },
+    {
+        "itemName":"beef",
+        "quantity":null,
+        "weight":4
+    }
 ]

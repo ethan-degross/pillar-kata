@@ -33,3 +33,14 @@ export function editItem(inventory, itemNameToSearch, key, newValue){
     })
     return inventory
 }
+
+export function checkoutTotal(inventory, scannedItems){
+    let result
+    let total = 0
+
+    scannedItems.forEach(function(element) {
+        result = inventory.find(item => item.itemName === element.itemName)
+        total += (result.itemPrice * element.quantity) + (result.itemPrice * element.weight) 
+    })
+    return total
+}
