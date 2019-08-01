@@ -1,7 +1,7 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import * as F from '../src/index'
-import { inventoryList, inventoryListA, scannedItems, scannedItemsA } from './mock-data'
+import { inventoryList, inventoryListA, scannedItems, scannedItemsA, inventoryListB } from './mock-data'
 
 describe('Store Inventory', () => {
     it('exists', () => {
@@ -51,5 +51,8 @@ describe('Calculate the Total', () => {
     it('returns the correct total using quantity and weight', () => {
         expect(F.checkoutTotal(inventoryListA, scannedItems)).to.equal(17.44)
         expect(F.checkoutTotal(inventoryListA, scannedItemsA)).to.equal(32.44)
+    })
+    it('returns the total using markdowns', () => {
+        expect(F.checkoutTotal(inventoryListB, scannedItems)).to.equal(15.94)
     })
 })

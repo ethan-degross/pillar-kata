@@ -40,7 +40,7 @@ export function checkoutTotal(inventory, scannedItems){
 
     scannedItems.forEach(function(element) {
         result = inventory.find(item => item.itemName === element.itemName)
-        total += (result.itemPrice * element.quantity) + (result.itemPrice * element.weight) 
+        total += ((result.itemPrice - result.itemMarkdown.decrease) * element.quantity) + (result.itemPrice * element.weight) 
     })
-    return total
+    return Math.round(total * 1e2) / 1e2
 }

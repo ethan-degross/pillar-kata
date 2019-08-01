@@ -87,6 +87,56 @@ export const inventoryListA = [
         }
     }
 ]
+export const inventoryListB = [
+    {
+        "itemName":"whole wheat bread",
+        "itemPrice":4.32,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"chips",
+        "itemPrice":3.56,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"soup",
+        "itemPrice":1,
+        "itemMarkdown":{
+            "decrease":.50,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"beef",
+        "itemPrice":2,
+        "itemMarkdown":{
+            "decrease":null,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    }
+]
 
 export const scannedItems = [
     {
