@@ -1,7 +1,7 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import * as F from '../src/index'
-import { inventoryList, inventoryListA, scannedItems, scannedItemsA, inventoryListB } from './mock-data'
+import { inventoryList, inventoryListA, inventoryListB, inventoryListC, inventoryListD, inventoryListE, scannedItems, scannedItemsA, scannedItemsB, scannedItemsC } from './mock-data'
 
 describe('Store Inventory', () => {
     it('exists', () => {
@@ -54,5 +54,12 @@ describe('Calculate the Total', () => {
     })
     it('returns the total using markdowns', () => {
         expect(F.checkoutTotal(inventoryListB, scannedItems)).to.equal(15.94)
+    })
+    it('return the total using markdowns and markdown-limits', () => {
+        expect(F.checkoutTotal(inventoryListC, scannedItemsB)).to.equal(19)
+    })
+    it('return the total for weight/markdowns/limits', () => {
+        expect(F.checkoutTotal(inventoryListD, scannedItemsC)).to.equal(3)
+        expect(F.checkoutTotal(inventoryListE, scannedItemsC)).to.equal(4)
     })
 })
