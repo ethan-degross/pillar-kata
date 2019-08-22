@@ -101,11 +101,15 @@ export function checkoutTotal(inventory, scannedItems, specialsList){
             receipt[receiptIndex].totalItemQuantity += 1
             receipt[receiptIndex].itemWeight += element.weight
             //logic to determine the special price
-            if(receipt[receiptIndex].totalItemQuantity % (specialFound.A + specialFound.B) === 0){
+            if(specialFound.type === "discount" && receipt[receiptIndex].totalItemQuantity % specialFound.A === 0){
+                receipt[receiptIndex].totalItemPrice = ((receipt[receiptIndex].totalItemPrice + currentItemFromInventory.itemPrice) - (specialFound.A * currentItemFromInventory.itemPrice)) + specialFound.B
+                //console.log(receipt[receiptIndex].totalItemPrice, "itemCount is " , receipt[receiptIndex].totalItemQuantity)
+            } else if(specialFound.type === "bogo" && receipt[receiptIndex].totalItemQuantity % (specialFound.A + specialFound.B) === 0){
                 receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice - (specialFound.B * currentItemFromInventory.itemPrice) * (specialFound.C/100)
                 //console.log(receipt[receiptIndex].totalItemPrice)
             } else {
                 receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice  
+                //console.log(receipt[receiptIndex].totalItemPrice)
             }
         } else if(element.weight != null && receipt[receiptIndex].markdownLimit != null && receipt[receiptIndex].totalItemQuantity >= receipt[receiptIndex].markdownLimit){
             receipt[receiptIndex].totalItemQuantity += 1
@@ -123,6 +127,8 @@ export function checkoutTotal(inventory, scannedItems, specialsList){
             receipt[receiptIndex].totalItemQuantity += 1
             receipt[receiptIndex].itemWeight += element.weight
             receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice - currentItemFromInventory.itemMarkdown.decrease 
+            //console.log(receipt[receiptIndex].totalItemPrice)
+
         } 
 
     }//end of each "element itemQuantity" for-loop

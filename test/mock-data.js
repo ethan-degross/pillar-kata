@@ -289,7 +289,7 @@ export const inventoryListE = [
 export const inventoryListF = [
     {
         "itemName":"whole wheat bread",
-        "itemPrice":4.32,
+        "itemPrice":4.00,
         "itemMarkdown":{
             "decrease": 0,
             "limit":null
@@ -301,14 +301,114 @@ export const inventoryListF = [
     },
     {
         "itemName":"chips",
-        "itemPrice":3.56,
+        "itemPrice":4,
         "itemMarkdown":{
             "decrease": 0,
             "limit":null
         },
         "itemSpecial":{
+            "type":'Buy 2 get 1 half off',
+            "limit":9
+        }
+    },
+    {
+        "itemName":"soup",
+        "itemPrice":1,
+        "itemMarkdown":{
+            "decrease":.50,
+            "limit":2
+        },
+        "itemSpecial":{
             "type":null,
             "limit":null
+        }
+    },
+    {
+        "itemName":"beef",
+        "itemPrice":2,
+        "itemMarkdown":{
+            "decrease": 0,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":"Buy 2 get 1 free",
+            "limit":6
+        }
+    }
+]
+export const inventoryListG = [
+    {
+        "itemName":"whole wheat bread",
+        "itemPrice":4.00,
+        "itemMarkdown":{
+            "decrease": 0,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":'Buy 3 for $7',
+            "limit":6
+        }
+    },
+    {
+        "itemName":"chips",
+        "itemPrice":4,
+        "itemMarkdown":{
+            "decrease": 0,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":'Buy 1 get 1 free',
+            "limit":10
+        }
+    },
+    {
+        "itemName":"soup",
+        "itemPrice":1,
+        "itemMarkdown":{
+            "decrease":.50,
+            "limit":2
+        },
+        "itemSpecial":{
+            "type":null,
+            "limit":null
+        }
+    },
+    {
+        "itemName":"beef",
+        "itemPrice":2,
+        "itemMarkdown":{
+            "decrease": 0,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":"Buy 2 get 1 free",
+            "limit":6
+        }
+    }
+]
+export const inventoryListH = [
+    {
+        "itemName":"whole wheat bread",
+        "itemPrice":4.00,
+        "itemMarkdown":{
+            "decrease": 0,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":'Buy 2 for $7',
+            "limit":8
+        }
+    },
+    {
+        "itemName":"chips",
+        "itemPrice":4,
+        "itemMarkdown":{
+            "decrease": 0,
+            "limit":null
+        },
+        "itemSpecial":{
+            "type":'Buy 1 get 1 free',
+            "limit":10
         }
     },
     {
@@ -528,22 +628,58 @@ export const scannedItemsD = [
         "weight":1
     }
 ]
+export const scannedItemsE = [
+    {
+        "itemName":"chips", 
+        "quantity":12,
+        "weight":null
+    }
+]
+export const scannedItemsF = [
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":12,
+        "weight":null
+    }
+]
 export const specials = [
     {
         "specialName":"Buy 2 get 1 free",
+        "type":"bogo",
         "A":2,//buy
         "B":1,//get
         "C":100//% off
     }, 
     {
+        "specialName":"Buy 2 get 1 half off",
+        "type":"bogo",
+        "A":2,//buy
+        "B":1,//get
+        "C":50//% off
+    }, 
+    {
         "specialName":"Buy 1 get 1 free",
+        "type":"bogo",
         "A":1,//buy
         "B":1,//get
         "C":100//% off
     },
     {
+        "specialName":"Buy 2 for $7",
+        "type":"discount",
+        "A":2,//buy
+        "B":7//for$
+    },
+    {
         "specialName":"Buy 3 for $7",
+        "type":"discount",
         "A":3,//buy
-        "B":7//for $
+        "B":7//for$
+    },
+    {
+        "specialName":"Buy 4 for $7",
+        "type":"discount",
+        "A":4,//buy
+        "B":7//for$
     }
 ]

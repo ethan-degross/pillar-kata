@@ -1,7 +1,7 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import * as F from '../src/index'
-import { inventoryList, inventoryListA, inventoryListB, inventoryListC, inventoryListD, inventoryListE, scannedItems, scannedItemsA, scannedItemsB, scannedItemsC, scannedItemsD, inventoryListF, specials } from './mock-data'
+import { inventoryList, inventoryListA, inventoryListB, inventoryListC, inventoryListD, inventoryListE, inventoryListF, inventoryListG, inventoryListH, scannedItems, scannedItemsA, scannedItemsB, scannedItemsC, scannedItemsD, scannedItemsE, scannedItemsF, specials } from './mock-data'
 
 describe('Store Inventory', () => {
     it('exists', () => {
@@ -65,10 +65,15 @@ describe('Calculate the Total', () => {
 })
 
 describe('Specials', () => {
-    it('uses correct special formula', () => {
+    it('processes bogo(buy N items, get M at %X) type of special', () => {
         expect(F.checkoutTotal(inventoryListF, scannedItemsC, specials)).to.equal(8)
-    })
-    it('stops calculating after special limit is reached', () => {
         expect(F.checkoutTotal(inventoryListF, scannedItemsD, specials)).to.equal(18)
+        expect(F.checkoutTotal(inventoryListF, scannedItemsE, specials)).to.equal(42)
+        expect(F.checkoutTotal(inventoryListG, scannedItemsE, specials)).to.equal(28)
+
+    })
+    it('processes discount(buy N for $X) type of special', () => {
+        expect(F.checkoutTotal(inventoryListG, scannedItemsF, specials)).to.equal(38)
+        expect(F.checkoutTotal(inventoryListH, scannedItemsF, specials)).to.equal(44)
     })
 })
