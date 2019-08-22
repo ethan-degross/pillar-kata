@@ -1,7 +1,7 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import * as F from '../src/index'
-import { inventoryList, inventoryListA, inventoryListB, inventoryListC, inventoryListD, inventoryListE, scannedItems, scannedItemsA, scannedItemsB, scannedItemsC, inventoryListF, specials } from './mock-data'
+import { inventoryList, inventoryListA, inventoryListB, inventoryListC, inventoryListD, inventoryListE, scannedItems, scannedItemsA, scannedItemsB, scannedItemsC, scannedItemsD, inventoryListF, specials } from './mock-data'
 
 describe('Store Inventory', () => {
     it('exists', () => {
@@ -67,5 +67,8 @@ describe('Calculate the Total', () => {
 describe('Specials', () => {
     it('uses correct special formula', () => {
         expect(F.checkoutTotal(inventoryListF, scannedItemsC, specials)).to.equal(8)
+    })
+    it('stops calculating after special limit is reached', () => {
+        expect(F.checkoutTotal(inventoryListF, scannedItemsD, specials)).to.equal(18)
     })
 })

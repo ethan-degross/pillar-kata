@@ -65,9 +65,11 @@ export function checkoutTotal(inventory, scannedItems, specialsList){
         specialFound = specialsList.find(x => x.specialName === currentItemFromInventory.itemSpecial.type)
 
         //console.log(specialFound)
+        /*
         if(specialFound != undefined){
             console.log(specialFound.specialName, specialFound.A, specialFound.B, specialFound.C)
         }
+        */
 
         //logic below would benefit from some object destructuring and using array.reduce() and also apply()method
         //orders.reduce((accumulatedValue, currentValue) => accumulatedValue  + currentValue) 
@@ -101,7 +103,7 @@ export function checkoutTotal(inventory, scannedItems, specialsList){
             //logic to determine the special price
             if(receipt[receiptIndex].totalItemQuantity % (specialFound.A + specialFound.B) === 0){
                 receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice - (specialFound.B * currentItemFromInventory.itemPrice) * (specialFound.C/100)
-                console.log(receipt[receiptIndex].totalItemPrice)
+                //console.log(receipt[receiptIndex].totalItemPrice)
             } else {
                 receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice  
             }
@@ -129,7 +131,7 @@ export function checkoutTotal(inventory, scannedItems, specialsList){
     for(let i = 0; i < receipt.length; i++){
         total += receipt[i].totalItemPrice
     }
-    console.log(receipt)
+    //console.log(receipt)
     return Math.round(total * 1e2) / 1e2
 }
 
