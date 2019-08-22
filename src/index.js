@@ -1,3 +1,5 @@
+
+//look into using spread syntax
 export function addItemToInventory(inventory, itemName, itemPrice, itemMarkdownDecrease, itemMarkdownLimit, itemSpecialType, itemSpecialLimit) {
     
     let item = {
@@ -34,11 +36,12 @@ export function editItem(inventory, itemNameToSearch, key, newValue){
     return inventory
 }
 
-export function checkoutTotal(inventory, scannedItems){
+export function checkoutTotal(inventory, scannedItems, specialsList){
     let currentItemFromInventory
     let total = 0
     let receipt = []
     let receiptIndex = 0
+    let specialFound
 
     function search(nameKey, myArray){
         for (var i = 0; i < myArray.length; i++){
@@ -47,6 +50,8 @@ export function checkoutTotal(inventory, scannedItems){
             }
         }
     }
+
+    
     //to mimic the scanning/updating feature, "everything" must happen in the loop below
     scannedItems.forEach(function(element) {
 
@@ -56,7 +61,16 @@ export function checkoutTotal(inventory, scannedItems){
         receiptIndex = search(element.itemName, receipt)//uses search function to determine what place(index) the scanned item matches
         
         currentItemFromInventory = inventory.find(x => x.itemName === element.itemName)//searches the inventory and matches the scanned item with the inventory item of the same name
+        
+        specialFound = specialsList.find(x => x.specialName === currentItemFromInventory.itemSpecial.type)
 
+        //console.log(specialFound)
+        if(specialFound != undefined){
+            console.log(specialFound.specialName, specialFound.A, specialFound.B, specialFound.C)
+        }
+
+        //logic below would benefit from some object destructuring and using array.reduce() and also apply()method
+        //orders.reduce((accumulatedValue, currentValue) => accumulatedValue  + currentValue) 
         if(receiptIndex === undefined && element.weight != null){
             receipt.push({
                 "itemName":currentItemFromInventory.itemName, 
@@ -81,6 +95,16 @@ export function checkoutTotal(inventory, scannedItems){
                 "specialLimit":currentItemFromInventory.itemSpecial.limit,
                 "totalItemPrice":currentItemFromInventory.itemPrice - currentItemFromInventory.itemMarkdown.decrease
             })
+        } else if(specialFound != undefined && receipt[receiptIndex].totalItemQuantity <= receipt[receiptIndex].specialLimit){
+            receipt[receiptIndex].totalItemQuantity += 1
+            receipt[receiptIndex].itemWeight += element.weight
+            //logic to determine the special price
+            if(receipt[receiptIndex].totalItemQuantity % (specialFound.A + specialFound.B) === 0){
+                receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice - (specialFound.B * currentItemFromInventory.itemPrice) * (specialFound.C/100)
+                console.log(receipt[receiptIndex].totalItemPrice)
+            } else {
+                receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice  
+            }
         } else if(element.weight != null && receipt[receiptIndex].markdownLimit != null && receipt[receiptIndex].totalItemQuantity >= receipt[receiptIndex].markdownLimit){
             receipt[receiptIndex].totalItemQuantity += 1
             receipt[receiptIndex].itemWeight += element.weight
@@ -98,13 +122,14 @@ export function checkoutTotal(inventory, scannedItems){
             receipt[receiptIndex].itemWeight += element.weight
             receipt[receiptIndex].totalItemPrice += currentItemFromInventory.itemPrice - currentItemFromInventory.itemMarkdown.decrease 
         } 
+
     }//end of each "element itemQuantity" for-loop
     })//end of scannedItems ForEach
 
     for(let i = 0; i < receipt.length; i++){
         total += receipt[i].totalItemPrice
     }
-    //console.log(receipt)
+    console.log(receipt)
     return Math.round(total * 1e2) / 1e2
 }
 
