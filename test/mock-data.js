@@ -440,17 +440,17 @@ export const scannedItems = [
     {
         "itemName":"whole wheat bread",
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"chips",
         "quantity":2,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"beef",
@@ -460,29 +460,29 @@ export const scannedItems = [
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     }
 ]
 export const scannedItemsA = [
     {
         "itemName":"whole wheat bread",
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"chips",
         "quantity":2,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"beef",
@@ -492,12 +492,12 @@ export const scannedItemsA = [
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     ,
     {
@@ -515,32 +515,32 @@ export const scannedItemsB = [
     {
         "itemName":"soup", 
         "quantity":5,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":3,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":9,
-        "weight":null
+        "weight": -1
     },
     {
         "itemName":"soup", 
         "quantity":1,
-        "weight":null
+        "weight": -1
     }
 ]
 export const scannedItemsC = [
@@ -632,14 +632,14 @@ export const scannedItemsE = [
     {
         "itemName":"chips", 
         "quantity":12,
-        "weight":null
+        "weight": -1
     }
 ]
 export const scannedItemsF = [
     {
         "itemName":"whole wheat bread", 
         "quantity":12,
-        "weight":null
+        "weight": -1
     }
 ]
 export const specials = [
