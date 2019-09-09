@@ -444,7 +444,12 @@ export const scannedItems = [
     },
     {
         "itemName":"chips",
-        "quantity":2,
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips",
+        "quantity":1,
         "weight": -1
     },
     {
@@ -476,7 +481,12 @@ export const scannedItemsA = [
     },
     {
         "itemName":"chips",
-        "quantity":2,
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips",
+        "quantity":1,
         "weight": -1
     },
     {
@@ -514,7 +524,7 @@ export const scannedItemsA = [
 export const scannedItemsB = [
     {
         "itemName":"soup", 
-        "quantity":5,
+        "quantity":1,
         "weight": -1
     },
     {
@@ -524,7 +534,7 @@ export const scannedItemsB = [
     },
     {
         "itemName":"soup", 
-        "quantity":3,
+        "quantity":1,
         "weight": -1
     },
     {
@@ -534,7 +544,77 @@ export const scannedItemsB = [
     },
     {
         "itemName":"soup", 
-        "quantity":9,
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"soup", 
+        "quantity":1,
         "weight": -1
     },
     {
@@ -631,14 +711,124 @@ export const scannedItemsD = [
 export const scannedItemsE = [
     {
         "itemName":"chips", 
-        "quantity":12,
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"chips", 
+        "quantity":1,
         "weight": -1
     }
 ]
 export const scannedItemsF = [
     {
         "itemName":"whole wheat bread", 
-        "quantity":12,
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
+        "weight": -1
+    },
+    {
+        "itemName":"whole wheat bread", 
+        "quantity":1,
         "weight": -1
     }
 ]
