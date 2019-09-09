@@ -49,31 +49,31 @@ describe('Scanned Items', () => {
 
 describe('Calculate the Total', () => {
     it('returns the correct total using quantity and weight', () => {
-        expect(F.checkoutTotal(inventoryListA, scannedItems, specials)).to.equal(17.44)
-        expect(F.checkoutTotal(inventoryListA, scannedItemsA, specials)).to.equal(32.44)
+        expect(F.main(inventoryListA, scannedItems, specials)).to.equal(17.44)
+        expect(F.main(inventoryListA, scannedItemsA, specials)).to.equal(32.44)
     })
     it('returns the total using markdowns', () => {
-        expect(F.checkoutTotal(inventoryListB, scannedItems, specials)).to.equal(15.94)
+        expect(F.main(inventoryListB, scannedItems, specials)).to.equal(15.94)
     })
     it('returns the total using markdowns and markdown-limits', () => {
-        expect(F.checkoutTotal(inventoryListC, scannedItemsB, specials)).to.equal(19)
+        expect(F.main(inventoryListC, scannedItemsB, specials)).to.equal(19)
     })
     it('returns the total for weight/markdowns/limits', () => {
-        expect(F.checkoutTotal(inventoryListD, scannedItemsC, specials)).to.equal(6)
-        expect(F.checkoutTotal(inventoryListE, scannedItemsC, specials)).to.equal(10)
+        expect(F.main(inventoryListD, scannedItemsC, specials)).to.equal(6)
+        expect(F.main(inventoryListE, scannedItemsC, specials)).to.equal(10)
     })
 })
 
 describe('Specials', () => {
     it('processes bogo(buy N items, get M at %X) type of special', () => {
-        expect(F.checkoutTotal(inventoryListF, scannedItemsC, specials)).to.equal(8)
-        expect(F.checkoutTotal(inventoryListF, scannedItemsD, specials)).to.equal(18)
-        expect(F.checkoutTotal(inventoryListF, scannedItemsE, specials)).to.equal(42)
-        expect(F.checkoutTotal(inventoryListG, scannedItemsE, specials)).to.equal(28)
+        expect(F.main(inventoryListF, scannedItemsC, specials)).to.equal(8)
+        expect(F.main(inventoryListF, scannedItemsD, specials)).to.equal(18)
+        expect(F.main(inventoryListF, scannedItemsE, specials)).to.equal(42)
+        expect(F.main(inventoryListG, scannedItemsE, specials)).to.equal(28)
 
     })
     it('processes discount(buy N for $X) type of special', () => {
-        expect(F.checkoutTotal(inventoryListG, scannedItemsF, specials)).to.equal(38)
-        expect(F.checkoutTotal(inventoryListH, scannedItemsF, specials)).to.equal(44)
+        expect(F.main(inventoryListG, scannedItemsF, specials)).to.equal(38)
+        expect(F.main(inventoryListH, scannedItemsF, specials)).to.equal(44)
     })
 })
