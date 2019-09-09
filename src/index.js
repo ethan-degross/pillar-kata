@@ -38,8 +38,10 @@ export function editItem(inventory, itemNameToSearch, key, newValue){
 
 export function salePrice(currentItemFromInventory){
   let salePrice = currentItemFromInventory.itemPrice - currentItemFromInventory.itemMarkdown.decrease
+
   return salePrice
 }
+
 export function addToReceipt(receipt, currentItemFromInventory, element){
   receipt.push({
       "itemName":currentItemFromInventory.itemName,
@@ -54,7 +56,13 @@ export function addToReceipt(receipt, currentItemFromInventory, element){
   })
 }
 
-
+export function search(nameKey, myArray){
+    for (var i = 0; i < myArray.length; i++){
+        if (myArray[i].itemName === nameKey) {
+            return i
+        }
+    }
+}
 
 export function main(inventory, scannedItems, specialsList){
     let currentItemFromInventory
@@ -63,21 +71,11 @@ export function main(inventory, scannedItems, specialsList){
     let receiptIndex = 0
     let specialFound
 
-    function search(nameKey, myArray){
-        for (var i = 0; i < myArray.length; i++){
-            if (myArray[i].itemName === nameKey) {
-                return i
-            }
-        }
-    }
 
 
     //to "mimic" the scanning/updating feature, "everything" must happen in the loop below
     //in the real world it would be on trigger(scanner read)
-    //which would make this O(n), not squared O(n^2)
     scannedItems.forEach(function(element) {
-
-    for(let i = 1; i <= element.quantity; i++){
 
         receiptIndex = search(element.itemName, receipt)//uses search function to determine what place(index) the scanned item matches
 
@@ -127,10 +125,8 @@ export function main(inventory, scannedItems, specialsList){
             receipt[receiptIndex].itemWeight += element.weight
             receipt[receiptIndex].totalItemPrice += salePrice(currentItemFromInventory)
             //console.log(receipt[receiptIndex].totalItemPrice)
-
         }
 
-    }//end of each "element itemQuantity" for-loop
     })//end of scannedItems ForEach
 
     for(let i = 0; i < receipt.length; i++){
